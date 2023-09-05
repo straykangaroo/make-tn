@@ -28,3 +28,4 @@
 -   make help
 -   in doc ecc. diciamo thumb (directory) ma poi creiamo tn
 -   revisione generale
+-   licence
