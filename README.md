@@ -1,31 +1,60 @@
 # make-tn
 
--   Crea thumbnail a partire dalle immagini .jpg e .png  (estensione case insensitive) in una directory e sue sottodirectory (ricorsivamente),
-    posiziona i thumbnail in un'altra directory ricreando l'albero di sottodirectory.
+Create thumbnails from JPEG and PNG images in a directory tree, recursively recreating it.
+Being a makefile, it only (re)creates the thumbnails if the original file did not exist before or it had been modified.
 
-    es, da:
-    -   /images/01.jpg
-    -   /images/02.jpg
-    -   /images/sub/03.jpg
-    -   /images/sub/sub/04.png
+**Warning** Being a makefile, it does not detect file deletion in the original directory tree. This might lead to leftover thumbnails.
 
-    crea i thumbnail:
-    -   /thumb/01.jpg
-    -   /thumb/02.jpg
-    -   /thumb/sub/03.jpg
-    -   /thumb/sub/sub/04.png
+## Details
+    -   The size of the thumbnails, as well as the source and thumbnails directory may be configured (see Configuration below).
+    -   Thumbnails are created resizing the image and centering it in both dimensions. If the source image is smaller (in both dimensions) than the requested thumbnail size, the thumbnail will be the same as the source image
+    -   Profile and EXIF data are stripped
 
-    creando implicitamente, se non esistenti, le directory:
-    -   /thumb
-    -   /thumb/sub
-    -   /thumb/sub/sub
+## Example
 
--   Se almeno una delle dimensioni dell'immagine originale diversa da quella desiderata per il thumbnail, effettua un taglio centrato instagram-style
--   Se nessuna delle due dimensioni dell'immagine originale maggiore da quella desiderata per il thumbnail, non ingrandisce immagine
--   Profile and EXIF data are stripped
+```sh
+make thumbs
+```
 
-## todo
--   make help
--   in doc ecc. diciamo thumb (directory) ma poi creiamo tn
--   revisione generale
--   licence
+from the following directory structure
+    -   images/01.jpg
+    -   images/02.jpg
+    -   images/sub/03.jpg
+    -   images/sub/sub/04.png
+
+```make-tn``` creates the thumbnails
+    -   thumbs/01.jpg
+    -   thumbs/02.jpg
+    -   thumbs/sub/03.jpg
+    -   thumbs/sub/sub/04.png
+
+as well as, if not already existing, the following directories
+    -   thumbs
+    -   thumbs/sub
+    -   thumbs/sub/sub
+
+## Configuration
+
+Several variables may be set on the command line
+```sh
+make thumbs TN_DIR=my_thumbs
+```
+    -   **IMG_DIR** images input directory
+    -   **TN_DIR**  thumbnails output directory
+    -   **TN_W**    thumbnail width
+    -   **TN_H**    thumbnail height
+
+
+## Requirements
+
+```make-tn``` requires ```make``` and ```convert``` (part of ```ImageMagick```)
+
+
+## License
+
+Distributed under the MIT License. See LICENSE.txt for more information.
+
+
+## Contact
+
+[https://github.com/straykangaroo/make-tn](https://github.com/straykangaroo/make-tn)
