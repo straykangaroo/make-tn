@@ -45,10 +45,10 @@ Several variables may be set on the command line
 make TN_DIR=my_thumbs
 ```
 
--   **IMG_DIR** images input directory
--   **TN_DIR**  thumbnails output directory
--   **TN_W**    thumbnail width (in pixels)
--   **TN_H**    thumbnail height (in pixels)
+-   **IMG_DIR** images input directory (default is "images")
+-   **TN_DIR**  thumbnails output directory (default is "thumbs")
+-   **TN_W**    thumbnail width (in pixels, default is 400)
+-   **TN_H**    thumbnail height (in pixels, default is 400)
 
 
 ## Requirements
