@@ -1,14 +1,14 @@
 # make-tn
 
 Create thumbnails from JPEG and PNG images in a directory tree, recursively recreating it.
-Being a makefile, it only (re)creates the thumbnails if the original file did not exist before or it had been modified.
+Being a makefile, it only (re)creates the thumbnails if the original file did not exist before or it has been modified.
 
 **Warning** Being a makefile, it does not detect file deletion in the original directory tree. This might lead to leftover thumbnails.
 
 ## Details
-    -   The size of the thumbnails, as well as the source and thumbnails directory may be configured (see Configuration below).
-    -   Thumbnails are created resizing the image and centering it in both dimensions. If the source image is smaller (in both dimensions) than the requested thumbnail size, the thumbnail will be the same as the source image
-    -   Profile and EXIF data are stripped
+-   The size of the thumbnails, as well as the source and thumbnails directory may be configured (see Configuration below).
+-   Thumbnails are created resizing the image and centering it in both dimensions. If the source image is smaller (in both dimensions) than the requested thumbnail size, the thumbnail will be the same as the source image
+-   Profile and EXIF data are stripped
 
 ## Example
 
@@ -17,21 +17,21 @@ make thumbs
 ```
 
 from the following directory structure
-    -   images/01.jpg
-    -   images/02.jpg
-    -   images/sub/03.jpg
-    -   images/sub/sub/04.png
+-   images/01.jpg
+-   images/02.jpg
+-   images/sub/03.jpg
+-   images/sub/sub/04.png
 
 ```make-tn``` creates the thumbnails
-    -   thumbs/01.jpg
-    -   thumbs/02.jpg
-    -   thumbs/sub/03.jpg
-    -   thumbs/sub/sub/04.png
+-   thumbs/01.jpg
+-   thumbs/02.jpg
+-   thumbs/sub/03.jpg
+-   thumbs/sub/sub/04.png
 
 as well as, if not already existing, the following directories
-    -   thumbs
-    -   thumbs/sub
-    -   thumbs/sub/sub
+-   thumbs
+-   thumbs/sub
+-   thumbs/sub/sub
 
 ## Configuration
 
@@ -39,10 +39,10 @@ Several variables may be set on the command line
 ```sh
 make thumbs TN_DIR=my_thumbs
 ```
-    -   **IMG_DIR** images input directory
-    -   **TN_DIR**  thumbnails output directory
-    -   **TN_W**    thumbnail width
-    -   **TN_H**    thumbnail height
+-   **IMG_DIR** images input directory
+-   **TN_DIR**  thumbnails output directory
+-   **TN_W**    thumbnail width
+-   **TN_H**    thumbnail height
 
 
 ## Requirements
