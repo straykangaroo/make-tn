@@ -13,7 +13,7 @@ Being a makefile, it only (re)creates the thumbnails if the original file did no
 ## Example
 
 ```sh
-make thumbs
+make
 ```
 
 from the following directory structure
@@ -22,7 +22,7 @@ from the following directory structure
 -   images/sub/03.jpg
 -   images/sub/sub/04.png
 
-```make-tn thumbs``` creates the thumbnails
+```make-tn``` creates the thumbnails
 -   thumbs/01.jpg
 -   thumbs/02.jpg
 -   thumbs/sub/03.jpg
@@ -37,12 +37,12 @@ as well as, if not already existing, the following directories
 
 Several variables may be set on the command line
 ```sh
-make thumbs TN_DIR=my_thumbs
+make TN_DIR=my_thumbs
 ```
 -   **IMG_DIR** images input directory
 -   **TN_DIR**  thumbnails output directory
--   **TN_W**    thumbnail width
--   **TN_H**    thumbnail height
+-   **TN_W**    thumbnail width (in pixels)
+-   **TN_H**    thumbnail height (in pixels)
 
 
 ## Requirements
