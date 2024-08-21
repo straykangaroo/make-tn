@@ -3,7 +3,7 @@
 A makefile for creating thumbnails of JPEG and PNG images in a directory tree, recursively recreating it.
 Being a makefile, it only (re)creates the thumbnails if the original file has not been existing before or it has been modified.
 
-**Warning** Being a makefile, it does not detect file deletion in the original directory tree. This might lead to leftover thumbnails.
+**Warning** Being a makefile, it does not detect file deletion in the original directory tree. **This might lead to leftover thumbnails**.
 
 
 ## Details
