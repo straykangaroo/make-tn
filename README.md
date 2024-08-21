@@ -1,14 +1,14 @@
 # make-tn
 
-Makefile to create thumbnails from JPEG and PNG images in a directory tree, recursively recreating it.
-Being a makefile, it only (re)creates the thumbnails if the original file did not exist before or it has been modified.
+A makefile for creating thumbnails of JPEG and PNG images in a directory tree, recursively recreating it.
+Being a makefile, it only (re)creates the thumbnails if the original file has not been existing before or it has been modified.
 
 **Warning** Being a makefile, it does not detect file deletion in the original directory tree. This might lead to leftover thumbnails.
 
 
 ## Details
 
--   The size of the thumbnails, as well as the source and thumbnails directory may be configured (see [configuration](#configuration) below).
+-   The size of the thumbnails, as well as the source directory and the thumbnails directory may be configured (see [configuration](#configuration) below).
 -   Thumbnails are created resizing the image and centering it in both dimensions. If the source image is smaller (in both dimensions) than the requested thumbnail size, the thumbnail will be the same as the source image
 -   Profile and EXIF data are stripped
 
